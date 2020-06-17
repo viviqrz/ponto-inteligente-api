@@ -1,19 +1,15 @@
 package com.curso.pontointeligente.api.repositories;
 
-import static org.junit.Assert.assertEquals;
-
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import com.curso.pontointeligente.api.entities.Empresa;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
 public class EmpresaRepositoryTest {
@@ -23,7 +19,7 @@ public class EmpresaRepositoryTest {
 	
 	private static final String CNPJ = "5146365000100";
 	
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		Empresa empresa = new Empresa();
 		empresa.setRazaoSocial("Empresa de exemplo");
@@ -31,7 +27,7 @@ public class EmpresaRepositoryTest {
 		this.empresaRepository.save(empresa);
 	}
 	
-	@After
+	@AfterEach
 	public final void tearDown() {
 		this.empresaRepository.deleteAll();
 	}
@@ -40,7 +36,7 @@ public class EmpresaRepositoryTest {
 	public void testBuscarPorCnpj() {
 		Empresa empresa = this.empresaRepository.findByCnpj(CNPJ);
 		
-		assertEquals(CNPJ, empresa.getCnpj());
+		Assertions.assertEquals(CNPJ, empresa.getCnpj());
 	}
 	
 }

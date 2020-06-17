@@ -5,7 +5,6 @@ import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.curso.pontointeligente.api.entities.Funcionario;
@@ -39,7 +38,7 @@ public class FuncionarioServiceImpl implements FuncionarioService{
 	
 	public Optional<Funcionario> buscarPorId(Long id) {
 		log.info("Buscando funcionário pelo ID {}", id);
-		return Optional.ofNullable(this.funcionarioRepository.getOne(id));
+		return this.funcionarioRepository.findById(id);
 	}
 
 }

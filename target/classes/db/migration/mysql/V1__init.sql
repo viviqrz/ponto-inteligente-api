@@ -75,14 +75,14 @@ ALTER TABLE `lancamento`
 --
 -- Constraints for table `funcionario`
 --
-ALTER TABLE `funcionario`
-  ADD CONSTAINT `FK_empresa` FOREIGN KEY(`empresa_id`) REFERENCES `empresa` (`id`);
+--ALTER TABLE `funcionario`
+--  ADD CONSTAINT `FK_empresa` FOREIGN KEY(`empresa_id`) REFERENCES `empresa` (`id`);
   
 --
 -- Constraints for table `lancamento`
 --
-ALTER TABLE `lancamento`
-  ADD CONSTAINT `FK_funcionario` FOREIGN KEY(`funcionario_id`) REFERENCES `funcionario` (`id`);
+--ALTER TABLE `lancamento`
+--  ADD CONSTAINT `FK_funcionario` FOREIGN KEY(`funcionario_id`) REFERENCES `funcionario` (`id`);
 
 
 

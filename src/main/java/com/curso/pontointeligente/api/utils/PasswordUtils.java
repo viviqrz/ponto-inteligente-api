@@ -26,6 +26,8 @@ public class PasswordUtils {
 		return bCryptEncoder.encode(senha);
 	}
 	
-	
+	//public static void main(String[] args) {
+	//	System.out.println(gerarBCrypt("789000"));
+	//}
 	
 }
