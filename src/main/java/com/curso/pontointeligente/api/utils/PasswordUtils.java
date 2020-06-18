@@ -27,7 +27,7 @@ public class PasswordUtils {
 	}
 	
 	//public static void main(String[] args) {
-	//	System.out.println(gerarBCrypt("789000"));
+		//System.out.println(gerarBCrypt("123456"));
 	//}
 	
 }
