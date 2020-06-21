@@ -33,7 +33,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("com.curso.pontointeligente.api.controllers"))
+				.apis(RequestHandlerSelectors.basePackage("com.curso.pontointeligente.api.controllers"))  //o swagger usa o basePackage para buscar o controller 
 				.paths(PathSelectors.any()).build()
 				.apiInfo(apiInfo());
 	}
